@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 0.5rem;
+            border: none;
+        }
+        .card-header {
+            background-color: #343a40;
+            color: #fff;
+            font-size: 1.25rem;
+            text-align: center;
+        }
+        .btn-custom {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .btn-custom:hover {
+            background-color: #495057;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <% include("layouts/header") %>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Welcome To Admin Page
+            </div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <tbody>
+                        <tr>
+                            <th>Name</th>
+                            <td><%= adminName %></td>
+                        </tr>
+                        <tr>
+                            <th>Email</th>
+                            <td><%= adminEmail %></td>
+                        </tr>
+                        <tr>
+                            <th>Mobile</th>
+                            <td><%= adminMobile %></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="text-center">
+                    <a class="btn btn-custom btn-lg mx-2" href="/logout">Logout</a>
+                    <a class="btn btn-custom btn-lg mx-2" href="/dashboard">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <% include("layouts/footer") %>
+</body>
+</html>

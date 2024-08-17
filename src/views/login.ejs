@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #e9ecef; /* Light gray background for a professional look */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .admin {
+            color: #495057; /* Darker color for better visibility */
+            text-align: center;
+            margin-top: 50px;
+            font-size: 2rem;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+        }
+
+        .form {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ced4da;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .inputsubmit {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff; /* Bootstrap primary color */
+            color: white;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .inputsubmit:hover {
+            background-color: #0056b3; /* Darker shade for hover effect */
+        }
+
+        .message {
+            color: red;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <% include('layouts/header') %>
+
+    <h1 class="admin">Admin Login</h1>
+
+    <div class="form-container">
+        <form class="form" method="post" action="/login">
+            <% if (typeof message !== 'undefined') { %>
+                <div class="message"><%= message %></div>
+            <% } %>
+
+            <input class="input" type="email" name="email" placeholder="Enter Your Email" required>
+            <input class="input" type="password" name="password" placeholder="Enter Your Password" required>
+            <input class="inputsubmit" type="submit" value="Login">
+        </form>
+    </div>
+
+    <% include('layouts/footer') %>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
